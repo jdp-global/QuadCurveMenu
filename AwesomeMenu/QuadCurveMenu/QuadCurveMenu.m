@@ -241,6 +241,15 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 	}
 	else
 	{
+		animationType =  AnimationTypeClose;
+		float angle = 0.0f;
+		[UIView animateWithDuration:0.2f animations:^{
+            //if (self.shouldAnimateMainButton)
+            {
+                addButton.transform = CGAffineTransformMakeRotation(angle);
+            }
+		}];
+				
 		expanded = NO;
 		
 		if ([self.delegate respondsToSelector:@selector(quadCurveMenu:didSelectIndex:)])
